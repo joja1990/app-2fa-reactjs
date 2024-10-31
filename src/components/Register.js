@@ -23,7 +23,7 @@ const Register = () => {
       return toggleLoading(false);
     }
 
-    fetch(process.env.REACT_APP_URL_API+"/register", {
+    fetch(process.env.REACT_APP_URL_API+"/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
