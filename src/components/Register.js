@@ -36,7 +36,7 @@ const Register = () => {
           editError(dataRes.msg);
           toggleLoading(false);
         } else {
-          editSuccess("Registeration Successful!");
+          editSuccess("Registrado Correctamente!");
           history.push("/");
           changeRegisterData(dataRes);
           toggleLoading(false);
@@ -44,7 +44,7 @@ const Register = () => {
       })
       .catch((err) => {
         console.log(err);
-        editError("A server error occured. Please try again");
+        editError("Error en el servidor, intente de nuevo");
         toggleLoading(false);
       });
   };
@@ -61,7 +61,7 @@ const Register = () => {
           </div>
         ) : null}
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email </label>
           <input
             type="email"
             required
@@ -82,7 +82,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword2">Confirm Password</label>
+          <label htmlFor="exampleInputPassword2">Confirmar Password</label>
           <input
             required
             type="password"
@@ -93,7 +93,7 @@ const Register = () => {
         </div>
 
         <button type="submit" className="btn btn-primary btn-block">
-          Submit
+          Guardar
         </button>
       </form>
       <div className="text-center">
