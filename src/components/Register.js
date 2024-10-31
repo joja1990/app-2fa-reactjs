@@ -19,7 +19,7 @@ const Register = () => {
     toggleLoading(true);
     e.preventDefault();
     if (userPassword !== confirmedPassword) {
-      editError("Passwords don't match!");
+      editError("Passwords no coinciden");
       return toggleLoading(false);
     }
 
@@ -53,7 +53,7 @@ const Register = () => {
     <div>
       <form className="border p-4 w-75 m-auto" onSubmit={submitInfo}>
         <div className="text-center mb-4">
-          <h2>Register</h2>
+          <h2>Registrar usuario</h2>
         </div>
         {error ? (
           <div className="alert alert-danger" role="alert">
