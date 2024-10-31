@@ -3,7 +3,7 @@ import "../Dashboard.css";
 import { useGlobalState } from "../context/GlobalContext";
 import { useHistory, Link } from "react-router-dom";
 const NavBar = ({ value }) => {
-    const { loggedInUser, editSuccess, success, changeCurrentUser } = useGlobalState();
+    const { editSuccess} = useGlobalState();
     const history = useHistory();
     const signOut = () => {
         localStorage.removeItem("myToken");
@@ -20,7 +20,7 @@ const NavBar = ({ value }) => {
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/settings">Settings</Link></li>
           <li><Link to="/users">Users</Link></li>
-          <li><Link to="/reports">Reports</Link></li>
+           
         </ul>
         <button className="btn-logout" onClick={signOut}>Cerrar sesión</button>
       </div>

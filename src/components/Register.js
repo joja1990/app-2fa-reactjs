@@ -95,12 +95,13 @@ const Register = () => {
         <button type="submit" className="btn btn-primary btn-block">
           Guardar
         </button>
-      </form>
-      <div className="text-center">
-        <Link to="/" onClick={() => editError("")}>
+        <div className="text-center">
+        <Link to="/" className="btn btn-secundary " onClick={() => editError("")}>
           Login
         </Link>
       </div>
+      </form>
+     
     </div>
   );
 };

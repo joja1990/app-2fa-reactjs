@@ -7,7 +7,7 @@ const Validation = () => {
   const [pin, setPin] = useState();
   const [err, setErr] = useState("");
   const history = useHistory();
-
+  const { editSuccess} = useGlobalState();
   useEffect(() => {
     if (loggedInUser.user) {
       console.log("exist");
@@ -51,6 +51,13 @@ const Validation = () => {
       setErr("PIN no es correcto!");
     }
   }
+  const signOut = () => {
+    localStorage.removeItem("myToken");
+    localStorage.removeItem("authed");
+    localStorage.removeItem("didAuth");
+    editSuccess("Su sesión se cerró!");
+    history.push("/");
+  };
 
   return (
     <div className="card">
@@ -86,7 +93,10 @@ const Validation = () => {
         <br />
         <div className="text-center">
           <button className="btn btn-outline-primary" onClick={validateUser}>
-            Submit
+            Validar
+          </button>
+          <button className="btn btn-outline-secondary" onClick={signOut}>
+            Cancelar
           </button>
         </div>
       </div>

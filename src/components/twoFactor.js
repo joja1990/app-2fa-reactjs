@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalState } from "../context/GlobalContext";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link} from "react-router-dom";
 import QRCodeGenerator from './QR';
 import NavBar from "./NavBar";
 import "../Dashboard.css";  // Estilo vinculado
@@ -86,6 +86,14 @@ console.log(loggedInUser.user.email);
            
         </p>
         <p className="text-center">
+          SI no puedes escanera copia el codigo  
+          
+        </p>
+        <p className="text-center">
+         {userSecret}          
+        </p>
+        <p className="text-center">
+          
           2- Ingresa el Pin de Google Authenticator
         </p>
         <div className="text-center">
@@ -100,9 +108,10 @@ console.log(loggedInUser.user.email);
         </div>
         <br />
         <div className="text-center">
-          <button className="btn btn-outline-primary" onClick={verifySecret}>
+          <button className="btn btn-primary" onClick={verifySecret}>
             Confirmar
           </button>
+          <Link className="btn btn-secundary" to="/dashboard">Cancelar</Link>
         </div>
       </div>
     </div>

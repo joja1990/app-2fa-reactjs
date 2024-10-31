@@ -11,23 +11,25 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AuthedRoute from "./components/AuthedRoute";
 import TwoFactor from "./components/twoFactor";
 import Validation from "./components/validation";
-
+import Users from "./components/Users";
 function App() {
   return (
-    <div className="container">
-      <Header />
+    
+      
       <ContextProvider>
         <Router>
           <Switch>
             <AuthedRoute exact path="/" component={Login} />
             <AuthedRoute path="/register" component={Register} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+            <ProtectedRoute exact path="/settings" component={Dashboard} />
+            <ProtectedRoute exact path="/users" component={Users} />
             <ProtectedRoute path="/dashboard/2fa" component={TwoFactor} />
             <ProtectedRoute path="/user/validate" component={Validation} />
           </Switch>
         </Router>
       </ContextProvider>
-    </div>
+   
   );
 }
 
